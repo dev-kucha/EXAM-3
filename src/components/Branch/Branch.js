@@ -34,18 +34,21 @@ class Branch extends React.Component {
                 {/* <p className="Branch-id">{this.props.branch.id}</p> */}
                 <h3 className="Branch-title" >{titleName}</h3>
                 {/* <p>{this.props.branch.title}</p> */}
-                { this.state.branchDescription ? null : (<p className="BranchShowDetails" onClick={this.onDescriptionDisplay}>Детальніше...</p>)}
-                {/*                 <p onClick={this.onDescriptionDisplay}>Відкрити деталі...</p> */}
+                {this.state.branchDescription ? null : (<p className="BranchShowDetails" onClick={this.onDescriptionDisplay}>Детальніше...</p>)}
 
                 <p className="Branch-description" dangerouslySetInnerHTML={{ __html: this.state.branchDescription }}></p>
-                { this.state.branchDescription ? (<p className="BranchHideDetails" onClick={this.offDescriptionDisplay}>Сховати</p>) : null}
+                {this.state.branchDescription ? (
+                    <>
+                        <p className="Branch-geo">lat: {this.props.branch.geocoords.split('|')[0]}<br />lon: {this.props.branch.geocoords.split('|')[1]}</p>
+                        <p className="BranchHideDetails" onClick={this.offDescriptionDisplay}>Сховати</p>
+                    </>
+                ) : null}
                 {/*                 <p onClick={this.offDescriptionDisplay}>Закрити деталі...</p> */}
                 {/* <p>{this.props.branch.geocoords}</p> */}
-                <p className="Branch-geo">lat: {this.props.branch.geocoords.split('|')[0]}<br />lon: {this.props.branch.geocoords.split('|')[1]}</p>
+                {/* <p className="Branch-geo">lat: {this.props.branch.geocoords.split('|')[0]}<br />lon: {this.props.branch.geocoords.split('|')[1]}</p> */}
             </div>
         );
     };
-
 }
 /* Розібрати рядок координат на latitude та longitude*/
 /* if(offices[i].geocoords) {
@@ -69,18 +72,7 @@ function Branch(props) {
     const lat = props.geocoords.slice(0, geocoordsBreakPos);
     const lng = props.geocoords.slice(geocoordsBreakPos + 1);
  
-    return (
-        <div className="Branch-block">
-            <h3>{props.id}</h3>
-            <p style={{ "fontWeight": "bold" }}>{titleName}</p>
-            <p>{titleAddress}</p>
-            <p>{titlePhones}</p>
-            <p>{props.geocoords}</p>
-            <p>{lat}</p>
-            <p>{lng}</p>
-        </div>
-    );
- 
+     
 } */
 
 export default Branch;
