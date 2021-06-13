@@ -5,7 +5,7 @@ function Sidebar(props) {
     return (
         <div className="App-sidebar">
             {/* <h2>Branches</h2> */}
-            <BranchesList branches={props.branches} />
+            <BranchesList branches={props.branches} setSelectedZoom={props.setSelectedZoom} setSelectedCenter={props.setSelectedCenter} />
         </div>
     );
 }

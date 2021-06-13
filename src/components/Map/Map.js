@@ -1,10 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
-//import mapWindowHeight from '../../App';
-
-//import * as branchesData from "../../response-data-export.json";
-
-//console.log(branchesData);
 
 const containerStyle = {
     width: '100%',
@@ -12,57 +7,8 @@ const containerStyle = {
     margin: 'auto',
 };
 
-//let center = {
-//    lat: 49.511791,
-//    lng: 31.339463,
-//49.511791, 31.339463
-//};
-
-//console.log(document.getElementsByClassName('App-map')[0].clientHeight);
-//let mapWindowHeight = document.getElementsByClassName('App-map')[0].clientHeight;
-
-//let zoom = mapWindowHeight < 300 ? 4 : 6;
-//let zoom = 5;
-
-/* const position = {
-    lat: 50.381280920287864,
-    lng: 30.492463977490978,
-} */
-
-const onLoad = marker => {
-    //console.log('marker: ', marker)
-}
-/* function GetMarkers(props) {
-    //console.log(props.branches[0])
-    return (
-        <>
-            {
-                props.branches.map(item => <Marker key={item.id} branch={item} position={{
-                    'lat': Number(item.geocoords.split('|')[0]),
-                    'lng': Number(item.geocoords.split('|')[1])
-                }} //onClick={() => {
-                //setSelected(item);
-                //}}
-                ></Marker>)
-
-            }
-        </>
-    )
-} */
-
 function Map(props) {
     const [selectedBranch, setSelectedBranch] = useState(null);
-    const [zoom, setZoom] = useState(5);
-    const [center, setCenter] = useState({
-        lat: 49.511791,
-        lng: 31.339463,
-    });
-
-    useEffect(() => {
-        // Зменшимо зум карти для мобільних девайсів
-        let mapWindowHeight = document.getElementsByClassName('App-map')[0].clientHeight;
-        setZoom(mapWindowHeight < 300 ? 4.5 : 6)
-    });
 
     return (
         <LoadScript
@@ -70,8 +16,8 @@ function Map(props) {
         >
             <GoogleMap
                 mapContainerStyle={containerStyle}
-                center={center}
-                zoom={zoom}
+                center={props.center}
+                zoom={props.zoom}
                 onClick={(event) => console.log(event)}
             >
                 {props.branches.map(item => (
@@ -112,9 +58,6 @@ function Map(props) {
             </GoogleMap>
         </LoadScript >
     );
-
 }
-
-
 
 export default React.memo(Map)
