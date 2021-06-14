@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/EXAM-3/static/css/main.d639f352.chunk.css",
-    "main.js": "/EXAM-3/static/js/main.79d371ec.chunk.js",
-    "main.js.map": "/EXAM-3/static/js/main.79d371ec.chunk.js.map",
+    "main.css": "/EXAM-3/static/css/main.9c2371bf.chunk.css",
+    "main.js": "/EXAM-3/static/js/main.341491a1.chunk.js",
+    "main.js.map": "/EXAM-3/static/js/main.341491a1.chunk.js.map",
     "runtime-main.js": "/EXAM-3/static/js/runtime-main.b3fc68a0.js",
     "runtime-main.js.map": "/EXAM-3/static/js/runtime-main.b3fc68a0.js.map",
     "static/js/2.705e512a.chunk.js": "/EXAM-3/static/js/2.705e512a.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.e28414b8.chunk.js": "/EXAM-3/static/js/3.e28414b8.chunk.js",
     "static/js/3.e28414b8.chunk.js.map": "/EXAM-3/static/js/3.e28414b8.chunk.js.map",
     "index.html": "/EXAM-3/index.html",
-    "static/css/main.d639f352.chunk.css.map": "/EXAM-3/static/css/main.d639f352.chunk.css.map",
+    "static/css/main.9c2371bf.chunk.css.map": "/EXAM-3/static/css/main.9c2371bf.chunk.css.map",
     "static/js/2.705e512a.chunk.js.LICENSE.txt": "/EXAM-3/static/js/2.705e512a.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/EXAM-3/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b3fc68a0.js",
     "static/js/2.705e512a.chunk.js",
-    "static/css/main.d639f352.chunk.css",
-    "static/js/main.79d371ec.chunk.js"
+    "static/css/main.9c2371bf.chunk.css",
+    "static/js/main.341491a1.chunk.js"
   ]
 }
