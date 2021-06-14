@@ -24,7 +24,8 @@ class Branch extends React.Component {
         })
     }
 
-    offDescriptionDisplay = () => {
+    offDescriptionDisplay = (event) => {
+        event.stopPropagation();
         this.setState({
             branchDescription: ''
         });
@@ -37,16 +38,16 @@ class Branch extends React.Component {
         let titleName = this.props.branch.title.slice(0, titleBreakPos1);
 
         return (
-            <div className="Branch-block" >
+            <div className="Branch-block" onClick={this.onDescriptionDisplay}>
                 {/* <p className="Branch-id">{this.props.branch.id}</p> */}
                 <h3 className="Branch-title" >{titleName}</h3>
                 {/* <p>{this.props.branch.title}</p> */}
-                {this.state.branchDescription ? null : (<p className="BranchShowDetails" onClick={this.onDescriptionDisplay}>Детальніше...</p>)}
+                {/*                 {this.state.branchDescription ? null : (<p className="BranchShowDetails" onClick={this.onDescriptionDisplay}>Детальніше...</p>)} */}
                 <p className="Branch-description" dangerouslySetInnerHTML={{ __html: this.state.branchDescription }}></p>
                 {this.state.branchDescription ? (
                     <>
                         <p className="Branch-geo">lat: {this.props.branch.geocoords.split('|')[0]}<br />lon: {this.props.branch.geocoords.split('|')[1]}</p>
-                        <p className="BranchHideDetails" onClick={this.offDescriptionDisplay}>Сховати</p>
+                        <p className="BranchHideDetails" onClick={this.offDescriptionDisplay}>Згорнути</p>
                     </>
                 ) : null}
 
