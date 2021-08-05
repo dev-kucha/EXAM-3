@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+github: https://github.com/dev-kucha/EXAM-3
+gh-pages: https://dev-kucha.github.io/EXAM-3/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Добрий вечір усім присутнім.
 
-## Available Scripts
+Мене звати Юрій.
 
-In the project directory, you can run:
+Спершу хочу висловити подяку організаторам і вчителям академії
+- Оксані,
+- Анні
+- і, особливо Ростиславу Скибі. Знаю, що для нього це був непростий період і цікавий досвід. Але, мені здається, що він впорався на відмінно.
+Дякую, тобі, Рос!
+Бажаю натхнення і успіхів, продовжувати вчителювати.
 
-### `npm start`
+Дякую Академії за цей надзвичайно цікавий і місткий курс.
+Чесно кажучи, реєструючись я не усвідомлював, ступінь інтенсивності цього інтенсиву. Тричі на тиждень нова велика тема - це доволі складно, особливо якщо поєднувати навчання з основною роботою. І не всі теми вдалося досконало вивчити. Але основне, начебто зрозумів і надалі вже самостійно вдосконалюватиму. Дійсно, все тільки починається.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Вашій увазі пропонується випускний проект.
+Застосунок розроблено на базі чиненайпопулярнішої бібліотеки для розробки динамічних веб-застосунків - React.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+Основна ідея - зручний інтерфейс для відображення у вигляді точок на мапі та у вигляді окремих карток певного переліку об'єктів, інформацію про які отримано з віддаленого сервера.
+Це може бути корисно під час вирішення задач логістики, навігації на місцевості, у довідково-інформаційних сервісах.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Наприклад, я у якості вихідного прототипу я взяв інформацію про установи одного з українських банків.
 
-### `npm run build`
+Ідей було дуже багато - це і зручний контекстний пошук, і зчитування геолокації у разі використання мобільного девайса, і сортування точок по порядку, наприклад, збільшення відстані до неї і т.д.
+Але часові межі були обмежені. Врешті, що встиг, те зробив.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ФУНКЦІОНАЛ
+На даний час ми маємо такий функціонал:
+Ліворуч картки, праворуч мапа.
+При кліку на точки на мапі, бачимо спливаючі вікна з детальною інформацією.
+Клік на картці відкриває детальну інформацію про точку і фокусує її на карті.
+Натискання кнопки Refresh ініціює запит на сервер для оновлення інформації. Як тільки проміс PROMIS повертає дані з сервера, стан компоненти оновлюється, всі компоненти, на які це вплинуло, перемальювуються.
+Реалізовано адаптивність для перегляду на мобільних пристроях.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ТЕХНОЛОГІЇ
+Застосував GoogleMaps API - це найпопулярніший картографічний сервіс для фронтенду.
+Активно використав основний React-підхід поділу загального лейауту на окремі компоненти. Використовував як функціональні компоненти, так і компоненти на основі класів.
+Задіявтакі прийоми як прокидання пропсів PROPS крізь декілька компонентів вниз по так званому водоспаду, підняття стану STATE нагору.
+Викорирстовував новий спосіб тримання власного STATE в середині функціонального компонента за допомогою хуків.
+Для підключення до серверної БД застосував досить нову бібліотеку axios.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+У якості серверної БД я, наразі використав сервіс Firebase тому що поки що не зміг подолати обмеження CORS на сайті банку. Але json повністю ідентичний.
 
-### `npm run eject`
+ПЛАНИ НА МАЙБУТНЄ
+Мені взагалі дуже цікава тема роботи з картами і, зокрема, з GoogleMaps. На жаль не було достатньо часу щоб розібратися з іншими численними сервісами, що надає GoogleMaps API, але я планую зайнятися цим після екзамену і короткого відпочинку.
+Додаток, в принципі, вийшов доволі універсальним засобом.
+В архітектурі передбачено окремий компонент, у якому я планую реалізовувати функції нормалізації отриманих даних тобто приведення їх до єдиного вигляду, з яким уже працюватимуть усі інші компоненти.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Таким чином цей додаток може стати таким собі "випробувальним стендом" для відображення будь-яких точок, отриманих по будь-якому API а також для дослідження можливостей GoogleMaps API.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+В принципі все. Якщо є питання, готовий відповісти.
